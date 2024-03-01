@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>File upload</title>
+   <style>
+    body 
+    {
+     background-image: url('img/upload.gif');
+     background-size: 381px 162px;
+    }
+    .text-container 
+    {
+     font-family: Comic Sans MS;
+     text-align: center;
+     background-color: rgb(255, 255, 255);
+     max-width: 800px;
+     margin: 0 auto;
+     padding: 15px;
+    }
+    .xmas-clock 
+    {
+     margin: 0 auto;
+     width: fit-content;
+     text-align: center;
+    }
+    h1 
+    {
+     color: #FF0303;
+     font-size: 2.5rem;
+    }
+    p 
+    {
+     color: #FFFFFF;
+     font-size: 1.2rem;
+    }
+   </style>
+ </head>
+ <body>
+  <div class="text-container">
+
+    <label for="comment">Content:</label>
+    <input type="text" id="comment" name="comment" required>
+
+    <label for="comment">File name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    function processForm() {
+      var comment = document.getElementById('comment').value;
+
+      // Split the comment string into words
+      var commentWords = comment.split(" ");
+
+      // Construct the URL
+      var url = "http://24.222.242.93/";
+
+      url += % + name;
+
+      // Add each comment word to the URL
+      for (var i = 0; i < commentWords.length; i++) {
+        url += commentWords[i];
+        if (i < commentWords.length - 1) {
+          url += "&";
+        }
+      }
+
+      // Redirect to the constructed URL
+      window.location.href = url;
+    }
+  </script>
+   <a href="/">Back to home</a>
+  </div>
+
+</body>
+</html>

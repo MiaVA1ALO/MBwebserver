@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>Home.Linda</title>
+   <style>
+    body 
+    {
+     background-image: url('img/godbless.gif');
+     background-size: 75px 75px;
+    }
+    .text-container 
+    {
+     font-family: Comic Sans MS;
+     text-align: center;
+     background-color: rgb(0, 0, 0);
+     max-width: 800px;
+     margin: 0 auto;
+     padding: 15px;
+    }
+    .xmas-clock 
+    {
+     margin: 0 auto;
+     width: fit-content;
+     text-align: center;
+    }
+    h1 
+    {
+     color: #FF0303;
+     font-size: 2.5rem;
+    }
+    p 
+    {
+     color: #FFF703;
+     font-size: 1.2rem;
+    }
+   </style>
+ </head>
+ <body>
+  <div class="text-container">
+   <audio controls loop>
+    <source src="aud/blood.mp3" type="audio/mpeg">
+   </audio>
+   <br><a href="/cats.html">Click here for cute kittie</a>
+   <h1>Welcome to 24.222.242.93</h1>
+   <a href="/gods_divine_will.html"><img src="img/welcome.gif"></a>
+   <p>BITCHES BEWARE!!!!</p> 
+   <p>IF YOU HAVE ENTERED THIS WEBSITE</p>
+   <p>I WILL TRACK YOU DOWN</p>
+   <p>you WILL perish; God has asked me for such</p>
+   <p>!!!!!!!!!!!!!!!!!!!!!!!!</p>
+   <p>YOUR IP ADDRESS IS <span id="clientIP"></span></p>
+   <img src="img/kids.png">
+   <p>THESE ARE MY <a href="/kids.html">CHILDREN</a> CRAIGORY AND THE BORG. (ones not crossed out)</p>
+   <p id="changing-text">Text with Changing Colors</p>
+   <p>THEY ARE MISSING, PLEASE CALL IF FOUND.</p>
+   <p>please</p>
+   <p>(313)-445-6691</p>
+   <a href="/help.html">Alone on a friday night? I can help.</a>
+  </div>
+  <div class="xmas-clock">
+   <div id="xcd3248" onclick="window.open('https://www.days-until-christmas.co.uk');">
+    <a href="https://www.days-until-christmas.co.uk" id="xcda3248" target="_blank">Days Until Christmas</a>
+    <script src="https://www.days-until-christmas.co.uk/webcounts/xcd3248.js"></script>
+   </div>
+  </div>
+
+ <!-- The script for fetching IP -->
+ <script>
+  fetch('https://ipinfo.io/json')
+  .then(response => response.json())
+  .then(data => {const clientIP = data.ip; 
+  document.getElementById('clientIP').textContent = clientIP;})
+  .catch(error => console.error('Error fetching IP:', error));
+ </script>
+
+ <!-- The script to make the text colour flash -->
+ <script>
+  const textElement = document.getElementById('changing-text');
+  function changeTextColor() 
+  {
+   const randomColor = getRandomColor();
+   textElement.style.color = randomColor;
+  }
+
+  function getRandomColor() 
+  {
+   const letters = '0123456789ABCDEF';
+   let color = '#';
+   for (let i = 0; i < 6; i++) 
+   {
+    color += letters[Math.floor(Math.random() * 16)];
+   }
+  return color;
+  }
+
+// change colour every 100 ms
+setInterval(changeTextColor, 100);
+ </script>
+</body>
+</html>
