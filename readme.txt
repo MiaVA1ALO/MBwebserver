@@ -9,3 +9,6 @@ The example site directory is a website my friend made as a joke when I first wr
 upload feature is not implemented anymore, but users used to be able to upload files to be saved on the server (giving each user their own 
 webpage!) the file upload feature was also modified to allow a comment section (I don't think the HTML file for that is even in there 
 anymore...)
+
+I decided not to have this compiled as a .class file, I personally prefer to use it in an IDE. But you can add your own String[] args logic and then compile it using javac MBwebserver.java,
+and then run it with java MBwebserver arg1 arg[...] etc.
