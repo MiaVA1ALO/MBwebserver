@@ -11,10 +11,8 @@ public class MBwebserver
                                          // i used to use 1024 bytes, but I think much prefer 2048.
     private static String rootDirectory = "site";
 
-    // allows asynchronous processing of requests rather than (in this context) slower, buggy, sync which
-    // would be better for game servers and whatnot.
     private final ExecutorService executorService;
-    // also allows multiple people to attempt to access a file at once, so that loading a page works instantly,
+    // allows multiple people to attempt to access a file at once, so that loading a page works instantly,
     // instead of waiting for there to be space. it will still wait if maxThreads is exceeded, but it is
     // unlikely that many people would try to connect at once.
     // there is not limit to site users at once, only site users who are trying to actively load a file.
